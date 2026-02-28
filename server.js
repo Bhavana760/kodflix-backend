@@ -18,6 +18,11 @@ app.use(cors()); // Enable CORS for frontend
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: false }));
 
+app.get('/', (req, res) => {
+    res.send('Kodflix Backend Running 🚀');
+});
+
+
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/movies', require('./routes/movieRoutes'));
